@@ -44,8 +44,8 @@ After installation minikube
     $ kubectl get --all-namespaces pods
 ```
 
+Note: If the output shows the STATUS as ContainerCreating, the Pod is still being created.
 
->Note: If the output shows the STATUS as ContainerCreating, the Pod is still being created.
 >If the output shows the STATUS as Running, the Pod is now up and running.
 
 > Get the URL of the exposed Service to view the Service details:

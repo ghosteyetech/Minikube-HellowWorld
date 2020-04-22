@@ -54,3 +54,8 @@ By default, the Pod is only accessible by its internal IP address within the Kub
     $ kubectl get services
 ```
 NOTE: On cloud providers that support load balancers, an external IP address would be provisioned to access the Service. On Minikube, the LoadBalancer type makes the Service accessible through the minikube service command.
+
+> To view running service with provisioned ip 
+```
+    $ minikube service hello-node
+```
