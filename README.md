@@ -7,12 +7,19 @@ After installation minikube
     $ minikube start --driver=virtualbox
 ```
 
+>Note: If cluster is already created using above command no need to specify driver. Just use 
+
+```
+    $ minikube start
+```
+
 >create a Kubernetes Deployment using an existing image named echoserver, which is a simple HTTP server and expose it on port 8080 using --port.
 ```
     $ kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10
 ```
 
 >To access the hello-minikube Deployment, expose it as a Service:
+
 ```
     $ kubectl expose deployment hello-minikube --type=NodePort --port=8080
 ```
@@ -20,9 +27,23 @@ After installation minikube
 >The hello-minikube Pod is now launched but you have to wait until the Pod is up before accessing it via the exposed Service.
 
 >Check if the Pod is up and running:
+
 ```
     $ kubectl get pod
 ```
+
+>Get all running services
+
+```
+    $ kubectl get --all-namespaces services
+```
+
+>Similarly, you can take a look at the set of pods that were created during cluster startup.
+
+```
+    $ kubectl get --all-namespaces pods
+```
+
 
 >Note: If the output shows the STATUS as ContainerCreating, the Pod is still being created.
 >If the output shows the STATUS as Running, the Pod is now up and running.
