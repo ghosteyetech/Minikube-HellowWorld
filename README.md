@@ -82,3 +82,26 @@ Note: If the output shows the STATUS as ContainerCreating, the Pod is still bein
 ```
     $ minikube dashboard
 ```
+
+## Enable addons
+Minikube has a set of built-in addons that can be enabled, disabled and opened in the local Kubernetes environment.
+
+> List the currently supported addons:
+```
+    $ minikube addons list
+```
+
+> Enable an addon, for example, metrics-server:
+```
+    $ minikube addons enable metrics-server
+```
+
+> View the Pod and Service you just created:
+```
+    $ kubectl get pod,svc -n kube-system
+```
+
+> Disable metrics-server:
+```
+    $ minikube addons disable metrics-server
+```
